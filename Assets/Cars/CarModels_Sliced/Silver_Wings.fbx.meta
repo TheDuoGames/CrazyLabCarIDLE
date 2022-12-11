@@ -3,7 +3,27 @@ guid: ecd7fa330cb3cc34688a4a5efb1e4f5b
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BaseColorBlack
+    second: {fileID: 2100000, guid: 1a17f30f0ec2301429ccca5974a4be81, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lights_Material
+    second: {fileID: 2100000, guid: 7597b2077f9e19547b6baa25a273e5d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rims_Material
+    second: {fileID: 2100000, guid: 3c5194d2a1c57db4f953d7581a4cb6ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TextureAtlas
+    second: {fileID: 2100000, guid: f6ea2d30ec096fc439f8d6efbd2dada3, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
