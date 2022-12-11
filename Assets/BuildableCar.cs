@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using System.Linq;
 public class BuildableCar : MonoBehaviour
 {
     public List<Transform> pieces = new List<Transform>();
+    List<Transform> sortedList = new List<Transform>();
     public int currentIndex = 0;
     public AnimationCurve dropCurve;
     public void Start()
@@ -29,14 +31,19 @@ public class BuildableCar : MonoBehaviour
     }
     public void DropNextPart()
     {
-        if (currentIndex > pieces.Count - 1)
+
+        for (int i = 0; i < UpgradeData.Instance.playerData.currentDropLevel; i++)
         {
-            Debug.LogWarning("Shape Over");
-            ClickManager.OnDropAvaible.RemoveListener(DropNextPart);
-            return;
+            if (currentIndex > pieces.Count - 1)
+            {
+                Debug.LogWarning("Shape Over");
+                ClickManager.OnDropAvaible.RemoveListener(DropNextPart);
+                return;
+            }
+            pieces[currentIndex].gameObject.SetActive(true);
+            pieces[currentIndex].transform.DOLocalMoveY(-8, 1.0f).SetRelative().SetEase(dropCurve);
+            currentIndex++;
         }
-        pieces[currentIndex].gameObject.SetActive(true);
-        pieces[currentIndex].transform.DOLocalMoveY(-8, 1.0f).SetRelative().SetEase(dropCurve);
-        currentIndex++;
+
     }
 }

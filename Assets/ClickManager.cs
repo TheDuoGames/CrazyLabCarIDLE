@@ -6,8 +6,8 @@ using UnityEngine.Events;
 public class ClickManager : MonoBehaviour
 {
     public static UnityEvent OnDropAvaible = new UnityEvent();
-    private float dropRate = 0.25f;
-    public float timer;
+    private float dropRate = 1.0f;
+    private float timer;
     void Update()
     {
         timer += Time.deltaTime;
@@ -16,8 +16,6 @@ public class ClickManager : MonoBehaviour
             timer = 0;
             OnDropAvaible.Invoke();
         }
-
-
         if (Input.GetMouseButtonDown(0))
         {
             timer = 0;
