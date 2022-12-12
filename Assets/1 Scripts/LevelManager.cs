@@ -2,6 +2,8 @@ using UnityEngine;
 using TMPro;
 using SaveSystem;
 using System.Collections.Generic;
+using System;
+using System.Collections;
 
 public class LevelManager : Singleton<LevelManager>
 {
@@ -9,6 +11,7 @@ public class LevelManager : Singleton<LevelManager>
     public int currentLevel;
     public List<CarData> cars = new List<CarData>();
     public BuildableCar activeCarInScene;
+    private WaitForSeconds nextLevelDelay = new WaitForSeconds(0.1f);
     private new void Awake()
     {
         base.Awake();
@@ -26,9 +29,29 @@ public class LevelManager : Singleton<LevelManager>
     public void SpawnLevel()
     {
         int lastLevel = SavedData.Instance.playerData.gameLevel;
+        if (lastLevel >= cars.Count)
+        {
+            lastLevel = UnityEngine.Random.Range(0, cars.Count);
+        }
         Instantiate(cars[lastLevel].levelPrefab);
     }
 
+    public void CallNext()
+    {
+        StartCoroutine(CallNextAsync());
+    }
+    public IEnumerator CallNextAsync()
+    {
+        if (activeCarInScene.gameObject != null)
+        {
+            Destroy(activeCarInScene.gameObject, 0.09f);
+        }
+        yield return nextLevelDelay;
+        // Confettie
+        SavedData.Instance.playerData.gameLevel++;
+        SavedData.Instance.Save();
+        Observer.OnShapeOver.Invoke();
+    }
 }
 [System.Serializable]
 public class CarData
@@ -43,5 +66,5 @@ public enum NodeState
     Hidden,
     Left,
     Mid,
-    Right    
+    Right
 }

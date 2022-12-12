@@ -5,7 +5,7 @@ namespace CoreInput
     public class ClickManager : MonoBehaviour
     {
         public static UnityEvent OnDropAvaible = new UnityEvent();
-        private float dropRate = 1.0f;
+        private float dropRate = 0.05f;
         private float timer = -0.5f;
         void Update()
         {
@@ -21,5 +21,5 @@ namespace CoreInput
                 OnDropAvaible.Invoke();
             }
         }
-    } 
+    }
 }

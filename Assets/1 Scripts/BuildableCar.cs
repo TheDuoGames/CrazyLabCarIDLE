@@ -46,7 +46,7 @@ public class BuildableCar : MonoBehaviour
         {
             if (currentIndex > (totalPieceAmount - 1))
             {
-                Observer.OnShapeOver.Invoke();
+                LevelManager.Instance.CallNext();
                 enabled = false;
                 return;
             }
@@ -57,6 +57,12 @@ public class BuildableCar : MonoBehaviour
             });
             currentIndex++;
         }
-
+    }
+    private void OnDestroy()
+    {
+        foreach (var item in pieces)
+        {
+            item.transform.DOKill();
+        }
     }
 }

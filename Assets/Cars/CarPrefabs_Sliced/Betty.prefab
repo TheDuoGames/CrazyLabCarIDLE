@@ -2024,7 +2024,6 @@ MonoBehaviour:
   - {fileID: 3300366145675100737}
   - {fileID: 1986196871835570379}
   - {fileID: 1465564341490045900}
-  currentIndex: 0
   dropCurve:
     serializedVersion: 2
     m_Curve:
@@ -2094,6 +2093,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  currentIndex: 0
   totalPieceAmount: 826
 --- !u!1 &96994576710209578
 GameObject:

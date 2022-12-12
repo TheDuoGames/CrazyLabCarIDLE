@@ -58,22 +58,31 @@ public class LevelNode : MonoBehaviour
             case NodeState.Hidden:
                 transform.DOScale(Vector3.zero, 0.1f).OnComplete(() =>
                 {
-                    transform.DOMoveX(rightPosX, 0);
-                    levelTMP.text = (CurrentLevel + 1).ToString();
+                    transform.DOLocalMoveX(rightPosX, 0);
+                    AssignValues();
                 });
                 break;
             case NodeState.Left:
                 transform.DOScale(Vector3.one * 2, 0.1f);
-                transform.DOMoveX(leftPosX, 0.1f);
+                transform.DOLocalMoveX(leftPosX, 0.1f).OnComplete(() =>
+                {
+                    AssignValues();
+                });
                 break;
             case NodeState.Mid:
                 transform.DOScale(Vector3.one * 3, 0.1f);
-                transform.DOMoveX(0, 0.1f);
+                transform.DOLocalMoveX(0, 0.1f).OnComplete(() =>
+                {
+                    AssignValues();
+                });
 
                 break;
             case NodeState.Right:
                 transform.DOScale(Vector3.one * 2, 0.1f);
-                transform.DOMoveX(rightPosX, 0.1f);
+                transform.DOLocalMoveX(rightPosX, 0.1f).OnComplete(() =>
+                {
+                    AssignValues();
+                });
                 break;
             default:
                 break;

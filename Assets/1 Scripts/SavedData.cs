@@ -5,13 +5,14 @@ using UnityEngine;
 namespace SaveSystem
 {
     [DefaultExecutionOrder(-2000)]
-    public class SavedData : Singleton<SavedData>
+    public class SavedData : MonoBehaviour
     {
+        public static SavedData Instance;
         private const string saveKey = "playerData_CrazyLab";
         public PlayerData playerData;
-        private new void Awake()
+        private void Awake()
         {
-            base.Awake();
+            Instance = this;
             Load();
         }
         #region SaveMethods
