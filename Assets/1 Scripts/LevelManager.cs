@@ -11,31 +11,18 @@ public class LevelManager : Singleton<LevelManager>
     public int currentLevel;
     public List<CarData> cars = new List<CarData>();
     public BuildableCar activeCarInScene;
-    private WaitForSeconds nextLevelDelay = new WaitForSeconds(0.1f);
+    private WaitForSeconds nextLevelDelay = new WaitForSeconds(0.5f);
     private new void Awake()
     {
         base.Awake();
         if (testMode) return;
         SpawnLevel();
     }
-    private void OnEnable()
-    {
-        Observer.OnShapeOver.AddListener(SpawnLevel);
-    }
-    private void OnDisable()
-    {
-        Observer.OnShapeOver.RemoveListener(SpawnLevel);
-    }
     public void SpawnLevel()
     {
-        int lastLevel = SavedData.Instance.playerData.gameLevel;
-        if (lastLevel >= cars.Count)
-        {
-            lastLevel = UnityEngine.Random.Range(0, cars.Count);
-        }
+        var lastLevel = SavedData.Instance.playerData.gameLevel >= cars.Count ? UnityEngine.Random.Range(0, cars.Count) : SavedData.Instance.playerData.gameLevel;
         Instantiate(cars[lastLevel].levelPrefab);
     }
-
     public void CallNext()
     {
         StartCoroutine(CallNextAsync());
@@ -44,22 +31,23 @@ public class LevelManager : Singleton<LevelManager>
     {
         if (activeCarInScene.gameObject != null)
         {
-            Destroy(activeCarInScene.gameObject, 0.09f);
+            Destroy(activeCarInScene.gameObject, 0.5f);
         }
         yield return nextLevelDelay;
         // Confettie
         SavedData.Instance.playerData.gameLevel++;
         SavedData.Instance.Save();
+        SpawnLevel();
         Observer.OnShapeOver.Invoke();
     }
 }
+#region Structures
 [System.Serializable]
 public class CarData
 {
     public GameObject levelPrefab;
     public GameObject onePiecePrefab;
 }
-
 public enum NodeState
 {
     Blank,
@@ -67,4 +55,5 @@ public enum NodeState
     Left,
     Mid,
     Right
-}
+} 
+#endregion

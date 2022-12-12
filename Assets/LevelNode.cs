@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using SaveSystem;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class LevelNode : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class LevelNode : MonoBehaviour
     public int CurrentLevel => SavedData.Instance.playerData.gameLevel + 1;
     private float leftPosX = -220.0f;
     private float rightPosX = 220.0f;
+    public Image fillAmountImage;
     public void Awake()
     {
         AssignValues();
@@ -45,6 +47,15 @@ public class LevelNode : MonoBehaviour
             default:
                 break;
         }
+        fillAmountImage.fillAmount = 0f;
+        fillAmountImage.gameObject.SetActive(currentState == NodeState.Mid);
+    }
+    private void Update()
+    {
+        if (LevelManager.Instance.activeCarInScene && currentState == NodeState.Mid)
+        {
+            fillAmountImage.fillAmount = LevelManager.Instance.activeCarInScene.CurrentRate();
+        }
     }
     public void MoveNextNode()
     {
@@ -63,14 +74,14 @@ public class LevelNode : MonoBehaviour
                 });
                 break;
             case NodeState.Left:
-                transform.DOScale(Vector3.one * 2, 0.1f);
+                transform.DOScale(Vector3.one * 1, 0.1f);
                 transform.DOLocalMoveX(leftPosX, 0.1f).OnComplete(() =>
                 {
                     AssignValues();
                 });
                 break;
             case NodeState.Mid:
-                transform.DOScale(Vector3.one * 3, 0.1f);
+                transform.DOScale(Vector3.one * 2, 0.1f);
                 transform.DOLocalMoveX(0, 0.1f).OnComplete(() =>
                 {
                     AssignValues();
@@ -78,7 +89,7 @@ public class LevelNode : MonoBehaviour
 
                 break;
             case NodeState.Right:
-                transform.DOScale(Vector3.one * 2, 0.1f);
+                transform.DOScale(Vector3.one * 1, 0.1f);
                 transform.DOLocalMoveX(rightPosX, 0.1f).OnComplete(() =>
                 {
                     AssignValues();

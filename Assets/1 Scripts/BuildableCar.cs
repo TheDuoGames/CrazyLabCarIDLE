@@ -5,6 +5,7 @@ using DG.Tweening;
 using CoreInput;
 using NaughtyAttributes;
 using SaveSystem;
+using System;
 
 [DefaultExecutionOrder(-500)]
 public class BuildableCar : MonoBehaviour
@@ -29,17 +30,17 @@ public class BuildableCar : MonoBehaviour
         }
     }
 
-    public void OnEnable()
+    private void OnEnable()
     {
         LevelManager.Instance.activeCarInScene = this;
         ClickManager.OnDropAvaible.AddListener(DropNextPart);
     }
 
-    public void OnDisable()
+    private void OnDisable()
     {
         ClickManager.OnDropAvaible.RemoveListener(DropNextPart);
     }
-    public void DropNextPart()
+    private void DropNextPart()
     {
 
         for (int i = 0; i < SavedData.Instance.playerData.currentDropLevel; i++)
@@ -50,14 +51,18 @@ public class BuildableCar : MonoBehaviour
                 enabled = false;
                 return;
             }
+            int index = currentIndex;
             pieces[currentIndex].gameObject.SetActive(true);
             pieces[currentIndex].transform.DOLocalMoveY(-8, 1.0f).SetRelative().SetEase(dropCurve).OnComplete(() =>
             {
-                Observer.OnPieceDrop.Invoke();
+                Observer.OnPieceDrop.Invoke(pieces[index].position);
             });
             currentIndex++;
         }
     }
+
+    public float CurrentRate() => (float)currentIndex / (float)totalPieceAmount;
+
     private void OnDestroy()
     {
         foreach (var item in pieces)

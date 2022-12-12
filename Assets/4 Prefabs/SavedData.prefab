@@ -45,6 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerData:
     gameLevel: 0
-    currentDropLevel: 5
+    currentDropLevel: 1
     currentEarningLevel: 1
     currentSpeedLevel: 1
