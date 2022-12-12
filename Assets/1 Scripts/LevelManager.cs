@@ -36,3 +36,12 @@ public class CarData
     public GameObject levelPrefab;
     public GameObject onePiecePrefab;
 }
+
+public enum NodeState
+{
+    Blank,
+    Hidden,
+    Left,
+    Mid,
+    Right    
+}
