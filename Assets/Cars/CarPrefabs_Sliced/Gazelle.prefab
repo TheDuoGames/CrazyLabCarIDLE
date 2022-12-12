@@ -50531,58 +50531,49 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.49337757
-      value: 1
-      inSlope: 30.092842
-      outSlope: -3.8085074
+      time: 0.58541596
+      value: 0.98994684
+      inSlope: 7.5184913
+      outSlope: -2.1875896
       tangentMode: 1
       weightedMode: 3
-      inWeight: 0.024815505
-      outWeight: 0.15071043
+      inWeight: 0.05338543
+      outWeight: 0.20196216
     - serializedVersion: 3
-      time: 0.6439411
-      value: 0.84249204
+      time: 0.70767736
+      value: 0.90636057
       inSlope: -0.056790676
-      outSlope: -0.056790676
+      outSlope: 0.2180777
       tangentMode: 1
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.340537
+      outWeight: 0.21910611
     - serializedVersion: 3
-      time: 0.7388163
+      time: 0.8101009
       value: 1
-      inSlope: 4.6168723
-      outSlope: -2.4851956
+      inSlope: 1.4184433
+      outSlope: -1.4179293
       tangentMode: 1
       weightedMode: 2
-      inWeight: 0.11368693
-      outWeight: 0.21274066
+      inWeight: 0.22654709
+      outWeight: 0.29629236
     - serializedVersion: 3
-      time: 0.8314351
-      value: 0.9294901
+      time: 0.90913063
+      value: 0.93656015
       inSlope: 0.047133673
-      outSlope: 0.047133673
+      outSlope: 0.08039924
       tangentMode: 1
       weightedMode: 3
       inWeight: 0.3894318
-      outWeight: 0.44806296
-    - serializedVersion: 3
-      time: 0.907438
-      value: 1.0019765
-      inSlope: 0.07762798
-      outSlope: 0.07762798
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 0.11527324
-      outWeight: 0.12543122
+      outWeight: 0.28909668
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 2.0083165
-      outSlope: 2.0083165
+      inSlope: 1.1051219
+      outSlope: 1.1051219
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.1646156
+      inWeight: 0.21936591
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2

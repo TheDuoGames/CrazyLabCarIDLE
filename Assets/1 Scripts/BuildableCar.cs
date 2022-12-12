@@ -53,7 +53,7 @@ public class BuildableCar : MonoBehaviour
             }
             int index = currentIndex;
             pieces[currentIndex].gameObject.SetActive(true);
-            pieces[currentIndex].transform.DOLocalMoveY(-8, 1.0f).SetRelative().SetEase(dropCurve).OnComplete(() =>
+            pieces[currentIndex].transform.DOLocalMoveY(-8, 2.0f).SetRelative().SetEase(dropCurve).OnComplete(() =>
             {
                 Observer.OnPieceDrop.Invoke(pieces[index].position);
             });
