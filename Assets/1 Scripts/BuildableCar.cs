@@ -2,17 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using System.Linq;
+using CoreInput;
+using NaughtyAttributes;
+using SaveSystem;
+
+[DefaultExecutionOrder(-500)]
 public class BuildableCar : MonoBehaviour
 {
     public List<Transform> pieces = new List<Transform>();
-    List<Transform> sortedList = new List<Transform>();
-    public int currentIndex = 0;
     public AnimationCurve dropCurve;
-    public void Start()
+    [ReadOnly] public int currentIndex = 0;
+    [ReadOnly] public int totalPieceAmount;
+    [Button]
+    public void SetupChilds()
     {
         pieces = new List<Transform>(transform.GetComponentsInChildren<Transform>());
         pieces.RemoveAt(0);
+        totalPieceAmount = pieces.Count;
+    }
+    private void Awake()
+    {
         foreach (Transform item in pieces)
         {
             item.transform.localPosition += Vector3.up * 8;
@@ -22,6 +31,7 @@ public class BuildableCar : MonoBehaviour
 
     public void OnEnable()
     {
+        LevelManager.Instance.activeCarInScene = this;
         ClickManager.OnDropAvaible.AddListener(DropNextPart);
     }
 
@@ -32,16 +42,19 @@ public class BuildableCar : MonoBehaviour
     public void DropNextPart()
     {
 
-        for (int i = 0; i < UpgradeData.Instance.playerData.currentDropLevel; i++)
+        for (int i = 0; i < SavedData.Instance.playerData.currentDropLevel; i++)
         {
-            if (currentIndex > pieces.Count - 1)
+            if (currentIndex > (totalPieceAmount - 1))
             {
-                Debug.LogWarning("Shape Over");
-                ClickManager.OnDropAvaible.RemoveListener(DropNextPart);
+                Observer.OnShapeOver.Invoke();
+                enabled = false;
                 return;
             }
             pieces[currentIndex].gameObject.SetActive(true);
-            pieces[currentIndex].transform.DOLocalMoveY(-8, 1.0f).SetRelative().SetEase(dropCurve);
+            pieces[currentIndex].transform.DOLocalMoveY(-8, 1.0f).SetRelative().SetEase(dropCurve).OnComplete(() =>
+            {
+                Observer.OnPieceDrop.Invoke();
+            });
             currentIndex++;
         }
 

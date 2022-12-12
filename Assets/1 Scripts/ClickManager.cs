@@ -1,25 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-
-public class ClickManager : MonoBehaviour
+namespace CoreInput
 {
-    public static UnityEvent OnDropAvaible = new UnityEvent();
-    private float dropRate = 1.0f;
-    private float timer;
-    void Update()
+    public class ClickManager : MonoBehaviour
     {
-        timer += Time.deltaTime;
-        if (timer >= dropRate)
+        public static UnityEvent OnDropAvaible = new UnityEvent();
+        private float dropRate = 1.0f;
+        private float timer = -0.5f;
+        void Update()
         {
-            timer = 0;
-            OnDropAvaible.Invoke();
+            timer += Time.deltaTime;
+            if (timer >= dropRate)
+            {
+                timer = 0;
+                OnDropAvaible.Invoke();
+            }
+            if (Input.GetMouseButtonDown(0))
+            {
+                timer = 0;
+                OnDropAvaible.Invoke();
+            }
         }
-        if (Input.GetMouseButtonDown(0))
-        {
-            timer = 0;
-            OnDropAvaible.Invoke();
-        }
-    }
+    } 
 }

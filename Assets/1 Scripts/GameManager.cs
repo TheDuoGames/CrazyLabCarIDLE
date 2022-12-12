@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
 
-[DefaultExecutionOrder(-2000)]
-public class GameManager : MonoBehaviour
+namespace GameCore
 {
-    public static GameManager instance;
-    public bool pcInput;
-    public bool tap { get { if (pcInput) { return Input.GetMouseButtonDown(0); } else { if (Input.touchCount > 0) { return true; } } return false; } }
-    private void Awake()
+    [DefaultExecutionOrder(-2000)]
+    public class GameManager : MonoBehaviour
     {
-        instance = this;
+        public static GameManager instance;
+        Camera _camera;
+        public Camera Camera { get { return (_camera == null) ? _camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>() : _camera; } }
+        private void Awake()
+        {
+            instance = this;
+        }
     }
 }
