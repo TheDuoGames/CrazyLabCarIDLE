@@ -196,7 +196,7 @@ Material:
     - _StencilRef: 0
     - _StencilWriteMask: 255
     - _StencilZFail: 0
-    - _StylizeTab: 0
+    - _StylizeTab: 1
     - _Surface: 0
     - _ThresholdMapScale: 1
     - _UVSec: 0
@@ -207,12 +207,12 @@ Material:
     - _ZTest: 4
     - _ZWrite: 1
     m_Colors:
-    - _AlbedoColor: {r: 0.7735849, g: 0.105820596, b: 0.105820596, a: 1}
+    - _AlbedoColor: {r: 0.7735849, g: 0.20799215, b: 0.20799215, a: 1}
     - _Color: {r: 0.5471698, g: 0.036334634, b: 0, a: 1}
     - _DissolveBorderColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GoochBrightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _GoochDarkColor: {r: 0, g: 0, b: 0, a: 1}
+    - _GoochDarkColor: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 1}
     - _IridescenceColor: {r: 1, g: 1, b: 1, a: 0.5}
     - _RimBrightColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}

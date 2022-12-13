@@ -25,7 +25,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _AlbedoMap:
-        m_Texture: {fileID: 2800000, guid: 51df5e0a0d2879d4eb5e36aed24e715d, type: 3}
+        m_Texture: {fileID: 2800000, guid: c5efb6076ad0aa44083c6c0601a3b55b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -81,7 +81,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 51df5e0a0d2879d4eb5e36aed24e715d, type: 3}
+        m_Texture: {fileID: 2800000, guid: c5efb6076ad0aa44083c6c0601a3b55b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -215,7 +215,7 @@ Material:
     - _EmissionColor: {r: 1.5, g: 1.5, b: 1.5, a: 1.5}
     - _EmissionColorUI: {r: 1, g: 1, b: 1, a: 1}
     - _GoochBrightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _GoochDarkColor: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
+    - _GoochDarkColor: {r: 0.6698113, g: 0.6413759, b: 0.6413759, a: 1}
     - _IridescenceColor: {r: 1, g: 1, b: 1, a: 0.5}
     - _RimBrightColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}

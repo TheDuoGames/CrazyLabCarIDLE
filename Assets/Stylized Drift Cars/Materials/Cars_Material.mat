@@ -38,7 +38,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _AlbedoMap:
-        m_Texture: {fileID: 2800000, guid: d5548e2e0755581448b793348eadd6ce, type: 3}
+        m_Texture: {fileID: 2800000, guid: f91ed832a86871d48bd1f07f843d7ff0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -118,7 +118,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: d5548e2e0755581448b793348eadd6ce, type: 3}
+        m_Texture: {fileID: 2800000, guid: f91ed832a86871d48bd1f07f843d7ff0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -320,7 +320,7 @@ Material:
     - _DissolveBorderColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0.15686275, g: 0.15686275, b: 0.15686275, a: 1}
     - _GoochBrightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _GoochDarkColor: {r: 0.3773585, g: 0.23317908, b: 0.23317908, a: 1}
+    - _GoochDarkColor: {r: 0.509434, g: 0.36765754, b: 0.36765754, a: 1}
     - _IridescenceColor: {r: 1, g: 1, b: 1, a: 0.5}
     - _LightTransmissionColor: {r: 1, g: 0.65, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
