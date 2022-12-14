@@ -223,7 +223,7 @@ Material:
     - _DissolveMapScale: 1
     - _DrawnClampMax: 1
     - _DrawnClampMin: 0
-    - _DrawnMapScale: 1
+    - _DrawnMapScale: 1.51
     - _DstBlend: 0
     - _EnvironmentReflections: 1
     - _Flipbook: 0
