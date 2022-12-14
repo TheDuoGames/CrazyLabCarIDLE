@@ -2101,8 +2101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameOfTheCar: BETTY
-  backgroundColorOfCar: {r: 0.8431373, g: 0.854902, b: 0.86666673, a: 0}
-  outlineColorOfCar: {r: 0.17254902, g: 0.17254902, b: 0.1764706, a: 0}
+  backgroundColorOfCar: {r: 0.8431373, g: 0.854902, b: 0.86666673, a: 1}
+  outlineColorOfCar: {r: 0.17254902, g: 0.17254902, b: 0.1764706, a: 1}
 --- !u!1 &96994576710209578
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ namespace CoreInput
     {
         public static UnityEvent OnDropAvaible = new UnityEvent();
         private float dropRate => 1 / UpgradeManager.Instance.currentSpeedBonus;
-        private float timer = -0.5f;
+        private float timer = -0.1f;
         void Update()
         {
             timer += Time.deltaTime;
