@@ -6,6 +6,7 @@ using CoreInput;
 using NaughtyAttributes;
 using SaveSystem;
 using System;
+using System.Security.Cryptography;
 
 [DefaultExecutionOrder(-500)]
 public class BuildableCar : MonoBehaviour
@@ -69,5 +70,13 @@ public class BuildableCar : MonoBehaviour
         {
             item.transform.DOKill();
         }
+    }
+
+    public void Dispose(GameObject onePiecePrefab)
+    {
+        GameObject spawnedOnePiece = Instantiate(onePiecePrefab, transform.position, transform.rotation, null);
+        spawnedOnePiece.transform.SetParent(transform.parent);
+        spawnedOnePiece.AddComponent<MoveAndDisappear>().Animate();
+        Destroy(gameObject);
     }
 }
