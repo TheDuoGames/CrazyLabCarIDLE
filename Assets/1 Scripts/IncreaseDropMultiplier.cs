@@ -23,6 +23,7 @@ public class IncreaseDropMultiplier : MonoBehaviour
             isActive = false;
         });
 
+        #region Animation
         feedbackMSG.gameObject.SetActive(true);
         feedbackMSG.transform.DOScale(Vector3.one * 1.2f, 0.2f).OnComplete(() =>
         {
@@ -34,8 +35,7 @@ public class IncreaseDropMultiplier : MonoBehaviour
             feedbackMSG.gameObject.SetActive(false);
             feedbackMSG.transform.position -= Vector3.up * 80;
             feedbackMSG.DOFade(1, 0f);
-        });
-
-
+        }); 
+        #endregion
     }
 }
