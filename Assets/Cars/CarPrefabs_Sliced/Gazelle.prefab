@@ -49092,6 +49092,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6921690122907683554}
   - component: {fileID: 8959226717863740593}
+  - component: {fileID: -4298068112580911042}
   m_Layer: 0
   m_Name: Gazelle
   m_TagString: Untagged
@@ -50580,6 +50581,21 @@ MonoBehaviour:
     m_RotationOrder: 4
   currentIndex: 0
   totalPieceAmount: 696
+--- !u!114 &-4298068112580911042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7729611629558386776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2470d4d38a5867348bd7cce5937cf6f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameOfTheCar: GAZELLE
+  backgroundColorOfCar: {r: 0.40000004, g: 0.86666673, b: 0.227451, a: 1}
+  outlineColorOfCar: {r: 0.14901961, g: 0.14901961, b: 0.14901961, a: 1}
 --- !u!1 &7747289973132651274
 GameObject:
   m_ObjectHideFlags: 0

@@ -14076,6 +14076,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3006619419188923424}
   - component: {fileID: 5070477819026709121}
+  - component: {fileID: -7978877025768673139}
   m_Layer: 0
   m_Name: Red_Horse
   m_TagString: Untagged
@@ -15536,6 +15537,21 @@ MonoBehaviour:
     m_RotationOrder: 4
   currentIndex: 0
   totalPieceAmount: 682
+--- !u!114 &-7978877025768673139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2518207916494575258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2470d4d38a5867348bd7cce5937cf6f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameOfTheCar: BLUE HORSE
+  backgroundColorOfCar: {r: 0.18039216, g: 0.2392157, b: 0.5686275, a: 1}
+  outlineColorOfCar: {r: 0.20000002, g: 0.20000002, b: 0.20392159, a: 1}
 --- !u!1 &2522093947846958400
 GameObject:
   m_ObjectHideFlags: 0

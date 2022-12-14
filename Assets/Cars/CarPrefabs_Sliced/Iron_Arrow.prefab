@@ -11468,6 +11468,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1364246617969790452}
   - component: {fileID: 4190097955954255316}
+  - component: {fileID: -9118796147964467228}
   m_Layer: 0
   m_Name: Iron_Arrow
   m_TagString: Untagged
@@ -12968,6 +12969,21 @@ MonoBehaviour:
     m_RotationOrder: 4
   currentIndex: 0
   totalPieceAmount: 702
+--- !u!114 &-9118796147964467228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847909329880897358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2470d4d38a5867348bd7cce5937cf6f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameOfTheCar: IRON ARROW
+  backgroundColorOfCar: {r: 0.4784314, g: 0.59607846, b: 0.6784314, a: 1}
+  outlineColorOfCar: {r: 0.10980393, g: 0.10980393, b: 0.10980393, a: 1}
 --- !u!1 &1858776907297667469
 GameObject:
   m_ObjectHideFlags: 0

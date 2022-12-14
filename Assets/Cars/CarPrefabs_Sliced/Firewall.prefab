@@ -33231,6 +33231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5320620214970260704}
   - component: {fileID: 883066476729800057}
+  - component: {fileID: -6488777775281721684}
   m_Layer: 0
   m_Name: Firewall
   m_TagString: Untagged
@@ -34847,6 +34848,21 @@ MonoBehaviour:
     m_RotationOrder: 4
   currentIndex: 0
   totalPieceAmount: 760
+--- !u!114 &-6488777775281721684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4800119538716821082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2470d4d38a5867348bd7cce5937cf6f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameOfTheCar: FIREWALL
+  backgroundColorOfCar: {r: 0.854902, g: 0, b: 0.3647059, a: 1}
+  outlineColorOfCar: {r: 0.28627452, g: 0.28627452, b: 0.28627452, a: 1}
 --- !u!1 &4803067621248350623
 GameObject:
   m_ObjectHideFlags: 0

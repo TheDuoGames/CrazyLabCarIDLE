@@ -1321,6 +1321,7 @@ GameObject:
   m_Component:
   - component: {fileID: 599844149085438832}
   - component: {fileID: 6422681289052839341}
+  - component: {fileID: 3261269551308130219}
   m_Layer: 0
   m_Name: Italian_Bull
   m_TagString: Untagged
@@ -2869,6 +2870,21 @@ MonoBehaviour:
     m_RotationOrder: 4
   currentIndex: 0
   totalPieceAmount: 726
+--- !u!114 &3261269551308130219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223143410023127498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2470d4d38a5867348bd7cce5937cf6f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameOfTheCar: ITALIAN BULL
+  backgroundColorOfCar: {r: 0.8941177, g: 0.7372549, b: 0, a: 1}
+  outlineColorOfCar: {r: 0.14901961, g: 0.14901961, b: 0.14901961, a: 1}
 --- !u!1 &227954845536403711
 GameObject:
   m_ObjectHideFlags: 0
