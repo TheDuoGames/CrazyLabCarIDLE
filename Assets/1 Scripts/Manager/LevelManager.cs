@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections;
 using NaughtyAttributes;
 
-public class LevelManager : Singleton<LevelManager>
+public class LevelManager : MonoBehaviour
 {
     public bool testMode;
     public int currentLevel;
@@ -11,9 +11,10 @@ public class LevelManager : Singleton<LevelManager>
     public BuildableCar activeCarInScene;
     [ReadOnly] public int spawnedLevelIndex;
     public WaitForSeconds nextLevelDelay = new WaitForSeconds(2.0f);
+    public static LevelManager Instance;
     private new void Awake()
     {
-        base.Awake();
+        Instance = this;
         if (testMode) return;
         SpawnLevel();
     }
