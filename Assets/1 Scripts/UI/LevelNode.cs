@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using SaveSystem;
 using DG.Tweening;
 using UnityEngine.UI;
 
@@ -10,9 +9,9 @@ public class LevelNode : MonoBehaviour
 {
     public NodeState currentState;
     public TextMeshProUGUI levelTMP;
-    public int CurrentLevel => SavedData.Instance.playerData.gameLevel + 1;
-    private float leftPosX = -220.0f;
-    private float rightPosX = 220.0f;
+    public int CurrentLevel => UpgradeManager.Instance.SavedData.gameLevel + 1;
+    private readonly float leftPosX = -220.0f;
+    private readonly float rightPosX = 220.0f;
     public Image fillAmountImage;
     public void Awake()
     {

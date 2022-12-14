@@ -1,8 +1,5 @@
 using UnityEngine;
-using TMPro;
-using SaveSystem;
 using System.Collections.Generic;
-using System;
 using System.Collections;
 using NaughtyAttributes;
 
@@ -22,7 +19,7 @@ public class LevelManager : Singleton<LevelManager>
     }
     public void SpawnLevel()
     {
-        spawnedLevelIndex = SavedData.Instance.playerData.gameLevel >= cars.Count ? UnityEngine.Random.Range(0, cars.Count) : SavedData.Instance.playerData.gameLevel;
+        spawnedLevelIndex = UpgradeManager.Instance.SavedData.gameLevel >= cars.Count ? UnityEngine.Random.Range(0, cars.Count) : UpgradeManager.Instance.SavedData.gameLevel;
         Instantiate(cars[spawnedLevelIndex].levelPrefab);
     }
     public void CallNext()
@@ -31,24 +28,18 @@ public class LevelManager : Singleton<LevelManager>
     }
     public IEnumerator CallNextAsync()
     {
-        SavedData.Instance.playerData.gameLevel++;
-        SavedData.Instance.Save();
+        UpgradeManager.Instance.SavedData.gameLevel++;
+        UpgradeManager.Instance.Save();
         Observer.OnShapeOver.Invoke(false);
 
         yield return nextLevelDelay;
 
-
         activeCarInScene.transform.SetParent(ProgressEnvironment.instance.transform);
         activeCarInScene.Dispose(cars[spawnedLevelIndex].onePiecePrefab);
 
-        spawnedLevelIndex = SavedData.Instance.playerData.gameLevel >= cars.Count ? UnityEngine.Random.Range(0, cars.Count) : SavedData.Instance.playerData.gameLevel;
-
+        spawnedLevelIndex = UpgradeManager.Instance.SavedData.gameLevel >= cars.Count ? UnityEngine.Random.Range(0, cars.Count) : UpgradeManager.Instance.SavedData.gameLevel;
         ProgressEnvironment.instance.JoinNewCar(cars[spawnedLevelIndex].levelPrefab);
         Observer.OnShapeOver.Invoke(true);
-
-        // Confetties
-
-
     }
 }
 #region Structures

@@ -3731,7 +3731,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -3887,9 +3887,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pools:
   - tag: moneyText
-    prefab: {fileID: 2695525524450721479, guid: 44cf7fb202add824890c7f94c99781d4, type: 3}
-    size: 100
-    parent: {fileID: 1463287818}
+    prefab: {fileID: 845354068459197096, guid: ef07fc87f12c4bb409c50be84e390224, type: 3}
+    size: 1
+    parent: {fileID: 1323924199}
 --- !u!1 &1520231706
 GameObject:
   m_ObjectHideFlags: 0
@@ -5838,7 +5838,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6975680369063331536, guid: 93c395f99af650e4dae4b0bae27a3c1b, type: 3}
       propertyPath: m_Name
-      value: SavedData
+      value: UpgradeManager
       objectReference: {fileID: 0}
     - target: {fileID: 6975680369063331550, guid: 93c395f99af650e4dae4b0bae27a3c1b, type: 3}
       propertyPath: m_RootOrder

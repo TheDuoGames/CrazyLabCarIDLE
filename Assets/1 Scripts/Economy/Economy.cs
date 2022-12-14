@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Events;
@@ -32,6 +30,6 @@ public class Economy : Singleton<Economy>
     [Button] private void Load() { if (ES3.KeyExists(moneyKey)) money = ES3.Load<int>(moneyKey, 0); }
     [Button] private void Save() => ES3.Save(moneyKey, money);
     [Button] private void Delete() => ES3.DeleteKey(moneyKey);
-    //private void OnApplicationQuit() => ES3.Save<int>(moneyKey, money);
-    //private void OnApplicationPause(bool pause) => ES3.Save<int>(moneyKey, money);
+    private void OnApplicationQuit() => ES3.Save<int>(moneyKey, money);
+    private void OnApplicationPause(bool pause) => ES3.Save<int>(moneyKey, money);
 }

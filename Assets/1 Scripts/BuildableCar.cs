@@ -4,10 +4,6 @@ using UnityEngine;
 using DG.Tweening;
 using CoreInput;
 using NaughtyAttributes;
-using SaveSystem;
-using System;
-using System.Security.Cryptography;
-
 [DefaultExecutionOrder(-500)]
 public class BuildableCar : MonoBehaviour
 {
@@ -53,12 +49,9 @@ public class BuildableCar : MonoBehaviour
                 enabled = false;
                 return;
             }
-            int index = currentIndex;
             pieces[currentIndex].gameObject.SetActive(true);
-            pieces[currentIndex].transform.DOLocalMoveY(-8, 2.0f).SetRelative().SetEase(dropCurve).OnComplete(() =>
-            {
-                Observer.OnPieceDrop.Invoke(pieces[index].position);
-            });
+            Economy.Instance.Add(Mathf.RoundToInt(UpgradeManager.Instance.currentEarningBonus));
+            pieces[currentIndex].transform.DOLocalMoveY(-8, 2.0f).SetRelative().SetEase(dropCurve);
             currentIndex++;
         }
     }
@@ -75,10 +68,10 @@ public class BuildableCar : MonoBehaviour
 
     public void Dispose(GameObject onePiecePrefab)
     {
+        Observer.OnCarSold.Invoke(finalPrice);
         GameObject spawnedOnePiece = Instantiate(onePiecePrefab, transform.position, transform.rotation, null);
         spawnedOnePiece.transform.SetParent(transform.parent);
         spawnedOnePiece.AddComponent<MoveAndDisappear>().Animate();
-        Observer.OnCarSold.Invoke(finalPrice);
         Destroy(gameObject);
     }
 }

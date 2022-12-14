@@ -39724,6 +39724,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  finalPrice: 500
   currentIndex: 0
   totalPieceAmount: 710
 --- !u!114 &3355520722325762316

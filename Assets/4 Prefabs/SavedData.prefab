@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1031712ea0b3ce54f82ff4529cbe2ee4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerData:
+  SavedData:
     gameLevel: 0
     currentEarningLevel: 1
     currentSpeedLevel: 1
