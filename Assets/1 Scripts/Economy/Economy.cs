@@ -27,6 +27,8 @@ public class Economy : Singleton<Economy>
         Save();
     }
 
+
+    [Button] public void Cheat() => Add(2000);
     [Button] private void Load() { if (ES3.KeyExists(moneyKey)) money = ES3.Load<int>(moneyKey, 0); }
     [Button] private void Save() => ES3.Save(moneyKey, money);
     [Button] private void Delete() => ES3.DeleteKey(moneyKey);

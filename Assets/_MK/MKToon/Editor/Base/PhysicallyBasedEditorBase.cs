@@ -277,7 +277,7 @@ namespace MK.Toon.Editor
                         Properties.fresnelHighlights.SetValue(materialDst, true);
                     break;
 
-                    //Default Fallback Setup
+                    //Default Fallback Initialize
                     default:
                         Properties.workflow.SetValue(materialDst, Workflow.Metallic);
                     break;
@@ -625,7 +625,7 @@ namespace MK.Toon.Editor
         }
 
         /////////////////////////////////////////////////////////////////////////////////////////////
-		// Variants Setup                                                                          //
+		// Variants Initialize                                                                          //
 		/////////////////////////////////////////////////////////////////////////////////////////////
 
         private void ManageKeywordsWorkflow()

@@ -72,7 +72,7 @@ namespace MK.RampCreator
 
             EditorGUILayout.LabelField("How to use:", UnityEditor.EditorStyles.boldLabel);
             EditorGUILayout.LabelField("1. Create your gradient.");
-            EditorGUILayout.LabelField("2. Setup the output settings.");
+            EditorGUILayout.LabelField("2. Initialize the output settings.");
             EditorGUILayout.LabelField("3. Run the operation via \"Create Ramp\".");
             EditorGUILayout.LabelField("Existing files will be overwritten!", UnityEditor.EditorStyles.boldLabel);
             Divider();

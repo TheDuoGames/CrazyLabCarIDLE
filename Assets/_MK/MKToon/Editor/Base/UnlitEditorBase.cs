@@ -189,7 +189,7 @@ namespace MK.Toon.Editor
         }
 
         /////////////////////////////////////////////////////////////////////////////////////////////
-		// Setup                                                                                   //
+		// Initialize                                                                                   //
 		/////////////////////////////////////////////////////////////////////////////////////////////
         
         /// <summary>
@@ -293,7 +293,7 @@ namespace MK.Toon.Editor
         }
 
         /// <summary>
-        /// Setup the material when shader is changed
+        /// Initialize the material when shader is changed
         /// </summary>
         /// <param name="materialDst"></param>
         /// <param name="oldShader"></param>
@@ -744,7 +744,7 @@ namespace MK.Toon.Editor
         }
 
         /////////////////////////////////////////////////////////////////////////////////////////////
-		// Variants Setup                                                                          //
+		// Variants Initialize                                                                          //
 		/////////////////////////////////////////////////////////////////////////////////////////////
         
         private void ManageKeywordsBlend()
