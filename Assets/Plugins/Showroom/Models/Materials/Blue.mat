@@ -222,7 +222,7 @@ Material:
     - _DissolveBorderSize: 0.25
     - _DissolveMapScale: 1
     - _DrawnClampMax: 1
-    - _DrawnClampMin: 0
+    - _DrawnClampMin: 0.061
     - _DrawnMapScale: 1.51
     - _DstBlend: 0
     - _EnvironmentReflections: 1
