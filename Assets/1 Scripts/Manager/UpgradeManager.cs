@@ -12,7 +12,7 @@ public class UpgradeManager : MonoBehaviour
     private const string saveKey = "playerData_CrazyLab";
     public SavedData SavedData;
     public float currentEarningBonus => 1 + (SavedData.currentEarningLevel - 1);
-    public float currentSpeedBonus => 1 + (SavedData.currentSpeedLevel - 1) * 0.1f;
+    public float currentSpeedBonus => 1 + (SavedData.currentSpeedLevel - 1) * 0.2f;
     public float currentSellBonus => 1 + (SavedData.currentSellLevel - 1) * 0.1f;
     [HorizontalLine(3.0f, EColor.Red)]
     public TextMeshProUGUI earningBonusTMP;
