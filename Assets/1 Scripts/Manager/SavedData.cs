@@ -28,15 +28,12 @@ namespace SaveSystem
         public void Clear() => ES3.DeleteKey(saveKey);
         #endregion
     }
-
-
     [System.Serializable]
     public class PlayerData
     {
         public int gameLevel;
-        public int currentDropLevel;
         public int currentEarningLevel;
         public int currentSpeedLevel;
+        public int currentSellLevel;
     }
-
 }

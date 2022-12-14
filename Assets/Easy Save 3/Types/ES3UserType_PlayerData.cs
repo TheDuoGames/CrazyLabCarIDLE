@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ES3Types
 {
 	[UnityEngine.Scripting.Preserve]
-	[ES3PropertiesAttribute("gameLevel", "currentDropLevel", "currentEarningLevel", "currentSpeedLevel")]
+	[ES3PropertiesAttribute("gameLevel", "currentEarningLevel", "currentSpeedLevel")]
 	public class ES3UserType_PlayerData : ES3ObjectType
 	{
 		public static ES3Type Instance = null;
@@ -17,7 +17,6 @@ namespace ES3Types
 			var instance = (SaveSystem.PlayerData)obj;
 			
 			writer.WriteProperty("gameLevel", instance.gameLevel, ES3Type_int.Instance);
-			writer.WriteProperty("currentDropLevel", instance.currentDropLevel, ES3Type_int.Instance);
 			writer.WriteProperty("currentEarningLevel", instance.currentEarningLevel, ES3Type_int.Instance);
 			writer.WriteProperty("currentSpeedLevel", instance.currentSpeedLevel, ES3Type_int.Instance);
 		}
@@ -32,9 +31,6 @@ namespace ES3Types
 					
 					case "gameLevel":
 						instance.gameLevel = reader.Read<System.Int32>(ES3Type_int.Instance);
-						break;
-					case "currentDropLevel":
-						instance.currentDropLevel = reader.Read<System.Int32>(ES3Type_int.Instance);
 						break;
 					case "currentEarningLevel":
 						instance.currentEarningLevel = reader.Read<System.Int32>(ES3Type_int.Instance);

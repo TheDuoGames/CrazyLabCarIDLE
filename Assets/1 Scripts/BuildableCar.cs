@@ -13,6 +13,7 @@ public class BuildableCar : MonoBehaviour
 {
     public List<Transform> pieces = new List<Transform>();
     public AnimationCurve dropCurve;
+    public int finalPrice;
     [ReadOnly] public int currentIndex = 0;
     [ReadOnly] public int totalPieceAmount;
     [Button]
@@ -44,7 +45,7 @@ public class BuildableCar : MonoBehaviour
     private void DropNextPart()
     {
 
-        for (int i = 0; i < SavedData.Instance.playerData.currentDropLevel; i++)
+        for (int i = 0; i < IncreaseDropMultiplier.dropMultiplier; i++)
         {
             if (currentIndex > (totalPieceAmount - 1))
             {
@@ -77,7 +78,7 @@ public class BuildableCar : MonoBehaviour
         GameObject spawnedOnePiece = Instantiate(onePiecePrefab, transform.position, transform.rotation, null);
         spawnedOnePiece.transform.SetParent(transform.parent);
         spawnedOnePiece.AddComponent<MoveAndDisappear>().Animate();
+        Observer.OnCarSold.Invoke(finalPrice);
         Destroy(gameObject);
     }
 }
- 

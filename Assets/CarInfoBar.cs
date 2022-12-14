@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 namespace FeedbackSystem
 {
+    [DefaultExecutionOrder(-200)]
     public class CarInfoBar : MonoBehaviour
     {
         [SerializeField] Image backgroundImage;

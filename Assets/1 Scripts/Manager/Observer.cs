@@ -8,5 +8,5 @@ public static class Observer
 
 
     public static UnityEvent<bool> OnShapeOver = new UnityEvent<bool>();
-
+    public static UnityEvent<int> OnCarSold = new UnityEvent<int>();
 }

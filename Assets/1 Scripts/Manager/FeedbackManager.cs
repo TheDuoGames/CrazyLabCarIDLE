@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Manager;
+using SaveSystem;
 namespace FeedbackSystem
 {
     public class FeedbackManager : MonoBehaviour
@@ -14,7 +15,14 @@ namespace FeedbackSystem
             Observer.OnPieceDrop.AddListener(SpawnTextForMoney);
             Observer.OnShapeOver.AddListener(OpenConfettiesAsync);
             Observer.OnShapeOver.AddListener(BlastMoney);
+            Observer.OnCarSold.AddListener(GiveMoney);
         }
+
+        private void GiveMoney(int price)
+        {
+            int totalPrice = price * SavedData.Instance.playerData.currentSellLevel;
+        }
+
         private void OnDisable()
         {
             Observer.OnPieceDrop.RemoveListener(SpawnTextForMoney);
@@ -28,7 +36,11 @@ namespace FeedbackSystem
         }
         private void BlastMoney(bool sold)
         {
-            if (sold) moneyBlast.SetActive(true);
+            if (sold)
+            {
+                moneyBlast.SetActive(false);
+                moneyBlast.SetActive(true);
+            }
         }
 
         private void OpenConfettiesAsync(bool sold)
