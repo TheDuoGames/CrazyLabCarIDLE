@@ -67,33 +67,24 @@ public class LevelNode : MonoBehaviour
                 Debug.LogWarning("An Unexpected Error Occured in Level Node System", this);
                 break;
             case NodeState.Hidden:
-                transform.DOScale(Vector3.zero, 0.1f).OnComplete(() =>
+                transform.DOScale(Vector3.zero, 0.2f).OnComplete(() =>
                 {
                     transform.DOLocalMoveX(rightPosX, 0);
                     AssignValues();
                 });
                 break;
             case NodeState.Left:
-                transform.DOScale(Vector3.one * 1, 0.1f);
-                transform.DOLocalMoveX(leftPosX, 0.1f).OnComplete(() =>
-                {
-                    AssignValues();
-                });
+                transform.DOScale(Vector3.one * 1, 0.2f);
+                transform.DOLocalMoveX(leftPosX, 0.2f).OnComplete(AssignValues);
                 break;
             case NodeState.Mid:
-                transform.DOScale(Vector3.one * 2, 0.1f);
-                transform.DOLocalMoveX(0, 0.1f).OnComplete(() =>
-                {
-                    AssignValues();
-                });
+                transform.DOScale(Vector3.one * 2, 0.2f);
+                transform.DOLocalMoveX(0, 0.2f).OnComplete(AssignValues);
 
                 break;
             case NodeState.Right:
-                transform.DOScale(Vector3.one * 1, 0.1f);
-                transform.DOLocalMoveX(rightPosX, 0.1f).OnComplete(() =>
-                {
-                    AssignValues();
-                });
+                transform.DOScale(Vector3.one * 1, 0.2f);
+                transform.DOLocalMoveX(rightPosX, 0.2f).OnComplete(AssignValues);
                 break;
             default:
                 break;
