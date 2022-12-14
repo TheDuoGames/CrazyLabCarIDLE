@@ -10,9 +10,14 @@ public class IncreaseDropMultiplier : MonoBehaviour
     public bool isActive;
     public void IncreaseDrop()
     {
-        if (isActive) return;
-        isActive = true;
+        if (isActive)
+        {
+            SoundManager.Instance.Play("buttonClickFailed");
+            return;
+        }
 
+        isActive = true;
+        SoundManager.Instance.Play("buttonClick");
         dropMultiplier = 2;
         DOVirtual.Float(1f, 0f, 10.0f, (x) =>
         {

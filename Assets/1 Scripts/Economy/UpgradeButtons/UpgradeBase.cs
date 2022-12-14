@@ -26,7 +26,13 @@ public abstract class UpgradeBase : MonoBehaviour
     }
     public void Buy()
     {
-        if (!Economy.Instance.IsEnough(cost)) return;
+        if (!Economy.Instance.IsEnough(cost))
+        {
+            SoundManager.Instance.Play("buttonClickFailed");
+            return;
+        }
+
+        SoundManager.Instance.Play("buttonClick");
         UpgradeTargetData();
         Economy.Instance.Remove(cost);
         UpgradeManager.Instance.Save();

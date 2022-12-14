@@ -9,10 +9,12 @@ public class CheatMenu : MonoBehaviour
     public void ManipulateTimeScale(int amount)
     {
         Time.timeScale = amount;
+        SoundManager.Instance.Play("buttonClick");
     }
     public void AddMoney(int amount)
     {
         Economy.Instance.Add(amount);
+        SoundManager.Instance.Play("buttonClick");
     }
 
     public void RestartGame()
@@ -22,5 +24,6 @@ public class CheatMenu : MonoBehaviour
         Economy.Instance.Clear();
         GC.Collect();
         SceneManager.LoadScene(0);
+        SoundManager.Instance.Play("buttonClick");
     }
 }

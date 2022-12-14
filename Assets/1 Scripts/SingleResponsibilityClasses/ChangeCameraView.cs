@@ -13,6 +13,7 @@ public class ChangeCameraView : MonoBehaviour
     public float transitionTime = 0.33f;
     public void ChangeView()
     {
+        SoundManager.Instance.Play("buttonClick");
         if (onTransition) return;
         onTransition = true;
 
