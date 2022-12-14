@@ -57,8 +57,9 @@ public class LevelNode : MonoBehaviour
             fillAmountImage.fillAmount = LevelManager.Instance.activeCarInScene.CurrentRate();
         }
     }
-    public void MoveNextNode()
+    public void MoveNextNode(bool sold)
     {
+        if (!sold) return;
         NodeState nextNode = GetNextNode();
         currentState = nextNode;
         switch (nextNode)

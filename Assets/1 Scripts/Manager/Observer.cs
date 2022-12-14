@@ -7,6 +7,6 @@ public static class Observer
     public static UnityEvent<Vector3> OnPieceDrop = new UnityEvent<Vector3>();
 
 
-    public static UnityEvent OnShapeOver = new UnityEvent();
+    public static UnityEvent<bool> OnShapeOver = new UnityEvent<bool>();
 
 }

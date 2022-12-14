@@ -33,6 +33,8 @@ public class LevelManager : Singleton<LevelManager>
     {
         SavedData.Instance.playerData.gameLevel++;
         SavedData.Instance.Save();
+        Observer.OnShapeOver.Invoke(false);
+
         yield return nextLevelDelay;
 
 
@@ -42,7 +44,7 @@ public class LevelManager : Singleton<LevelManager>
         spawnedLevelIndex = SavedData.Instance.playerData.gameLevel >= cars.Count ? UnityEngine.Random.Range(0, cars.Count) : SavedData.Instance.playerData.gameLevel;
 
         ProgressEnvironment.instance.JoinNewCar(cars[spawnedLevelIndex].levelPrefab);
-        Observer.OnShapeOver.Invoke();
+        Observer.OnShapeOver.Invoke(true);
 
         // Confetties
 
